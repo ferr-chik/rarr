@@ -70,3 +70,51 @@ h1 {
     font-weight: bold;
     color: #ff6347;
 }
+.slider {
+    position: relative;
+    width: 80%;
+    max-width: 800px;
+    overflow: hidden;
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    transition: opacity 0.5s ease;
+}
+
+.active {
+    display: block;
+}
+
+.inactive {
+    display: none;
+}
+
+button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+button.prev {
+    left: 0;
+}
+
+button.next {
+    right: 0;
+}
+
+button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}

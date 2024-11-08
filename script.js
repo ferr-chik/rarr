@@ -361,3 +361,50 @@ function getMonthName(monthIndex) {
 }
 // Инициализация календаря при загрузке страницы
 renderCalendar();
+
+//слайдер
+document.addEventListener("DOMContentLoaded", () => {
+    let currentIndex = 0;
+    const slides = document.querySelectorAll('.slide');
+    const totalSlides = slides.length;
+
+    // Автоматическая смена слайда каждые 3 секунды
+    let autoSlide = setInterval(nextSlide, 3000);
+
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.classList.remove('active');
+            slide.classList.add('inactive');
+            if (i === index) {
+                slide.classList.remove('inactive');
+                slide.classList.add('active');
+            }
+        });
+    }
+
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % totalSlides;
+        showSlide(currentIndex);
+    }
+
+    function prevSlide() {
+        currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+        showSlide(currentIndex);
+    }
+
+    // Остановка автоматической смены слайда при нажатии на кнопки
+    document.querySelector('.prev').addEventListener('click', () => {
+        clearInterval(autoSlide);
+        prevSlide();
+        autoSlide = setInterval(nextSlide, 3000); // перезапускаем автоматическую смену
+    });
+
+    document.querySelector('.next').addEventListener('click', () => {
+        clearInterval(autoSlide);
+        nextSlide();
+        autoSlide = setInterval(nextSlide, 3000); // перезапускаем автоматическую смену
+    });
+
+    // Инициализация слайда
+    showSlide(currentIndex);
+});
