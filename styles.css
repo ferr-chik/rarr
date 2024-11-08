@@ -1,0 +1,139 @@
+.hidden {
+    display: none ;
+} 
+
+.container { 
+    width: 50%; 
+    display: flex; 
+    justify-content: center; 
+   align-items: center; 
+   margin: auto; 
+   border: 1px solid black; 
+   border-radius: 25px; 
+
+} 
+
+ 
+.font { 
+    text-align: center; 
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+.calendar {
+
+    width: 190%;
+    height: 100%;
+    max-width: 900px;
+    max-height: 900px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: white;
+    
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+}
+
+button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.7;
+}
+
+#monthYear {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    background-color: #f7f7f7;
+    text-align: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.day-name {
+    padding: 10px 0;
+    font-weight: bold;
+}
+
+.dates {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    gap: 5px;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.date {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    background-color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    position: relative;
+}
+
+.date:hover {
+    background-color: #ddd;
+}
+
+.date.disabled {
+    background-color: #e0e0e0;
+    cursor: not-allowed;
+}
+
+.date.selected {
+    background-color: #1e90ff;
+    color: white;
+}
+
+.week-separator {
+    grid-column: span 7;
+    height: 1px;
+    background-color: #ddd;
+    margin: 5px 0;
+}
+
+
+.day-name:nth-child(1),
+.day-name:nth-child(7) {
+    color: red;
+}
