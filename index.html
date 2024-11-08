@@ -1,22 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Document</title>
-    
+    <title>Викторина по казахстанским праздникам</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class="sisi">
-    <div>
-    <img  class="container" src="https://live.staticflickr.com/4272/34830186061_d686c657a2_c.jpg" alt="aLLEEF">
-    <H1 class="font">Праздники Казахстана</H1>
-    <p class="font">Описание</p>
-    <button id="rightButton" onclick="rightButton()">></button>
-    <div>
-        
-    </div>
-</div>
+<body>
 
+    <div id="quiz-container">
+        <h1>Викторина по казахстанским праздникам</h1>
+        <div id="question-container">
+            <p id="question">Какой праздник казахстанцы отмечают 1 января?</p>
+            <div id="answers">
+              
+            </div>
+        </div>
+        <button id="next-btn" onclick="nextQuestion()" disabled>Следующий вопрос</button>
+        <div id="result"></div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
