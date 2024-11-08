@@ -301,29 +301,29 @@ function renderCalendar() {
     
     const currentMonth = currentDate.getMonth();
     const currentYear = currentDate.getFullYear();
-
+    // Устанавливаем название месяца и года
     monthYearElement.textContent = `${getMonthName(currentMonth)} ${currentYear}`;
-
+    // Получаем первый день месяца и количество дней в месяце
     const firstDayOfMonth = new Date(currentYear, currentMonth, 1);
     const lastDayOfMonth = new Date(currentYear, currentMonth + 1, 0);
     const firstDay = firstDayOfMonth.getDay();
     const lastDate = lastDayOfMonth.getDate();
-
+    // Очищаем контейнер с датами
     datesContainer.innerHTML = '';
-
+    // Добавляем пустые ячейки перед первым днем месяца
     for (let i = 0; i < firstDay; i++) {
         const emptyCell = document.createElement('div');
         emptyCell.classList.add('date', 'disabled');
         datesContainer.appendChild(emptyCell);
     }
-
+    // Добавляем даты
     for (let day = 1; day <= lastDate; day++) {
         const dateCell = document.createElement('div');
         dateCell.classList.add('date');
         dateCell.textContent = day;
         dateCell.addEventListener('click', () => selectDate(day));
         datesContainer.appendChild(dateCell);
-
+         // Разделяем недели горизонтальными линиями
         if ((day + firstDay) % 7 === 0) {
             const separator = document.createElement('div');
             separator.classList.add('week-separator');
@@ -359,5 +359,5 @@ function getMonthName(monthIndex) {
     ];
     return months[monthIndex];
 }
-
+// Инициализация календаря при загрузке страницы
 renderCalendar();

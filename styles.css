@@ -132,8 +132,8 @@ button:hover {
     margin: 5px 0;
 }
 
-
+/* Дополнительные стили для разделения дней недели и дат */
 .day-name:nth-child(1),
 .day-name:nth-child(7) {
-    color: red;
+    color: red;/* Выделяем выходные */
 }
